@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Sources\UI">
+      <UniqueIdentifier>{193a3e49-b939-449d-b9b3-b3a60fda2ecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Configure">
+      <UniqueIdentifier>{5791efd8-7226-412b-98e4-417c19f3f8b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core">
+      <UniqueIdentifier>{27328c3d-e69c-45ba-afa3-8f49e7f5981b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core\Sound">
+      <UniqueIdentifier>{d1aef168-7989-40ad-ae47-922103fd34b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core\Leaderboard">
+      <UniqueIdentifier>{b4f8c87f-1148-425b-b71e-44dca3718f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core\GameObjects">
+      <UniqueIdentifier>{e00b4911-a40f-4aad-8f70-743f73e5036a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core\GameObjects\Player">
+      <UniqueIdentifier>{c70b4607-9dac-461e-a60f-7e198616241d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core\GameObjects\InteractableObjects">
+      <UniqueIdentifier>{f106647e-2f51-45f9-a355-6f74c1787895}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core\GameObjects\InteractableObjects\Apple">
+      <UniqueIdentifier>{a28d5d73-3404-4304-a61e-8ada11421d18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\UI\BaseMenu">
+      <UniqueIdentifier>{b8b78e87-079d-4ddc-903c-2e03fd234fbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\UI\MainMenu">
+      <UniqueIdentifier>{1edb9b92-1c4e-4239-8197-25175cfd9d4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\UI\EndGameMenu">
+      <UniqueIdentifier>{a3b792f8-9cd3-4494-9d22-aa8b93b9e80c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\UI\LeaderboardMenu">
+      <UniqueIdentifier>{95871dd9-7299-4d63-8e73-8258cae558d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\UI\GameOverMenu">
+      <UniqueIdentifier>{7968c6c6-40e6-4590-8950-e02ed7e4dd4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\UI\SettingsMenu">
+      <UniqueIdentifier>{62fc76f4-7fd7-4da7-9bda-2560ec5ee17d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Utils">
+      <UniqueIdentifier>{2b63eb8e-cd46-4beb-962e-8abfee933051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Utils\Math">
+      <UniqueIdentifier>{1b440c15-50a2-413a-8e1f-a08aa1fcaf6d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UI.cpp">
+      <Filter>Sources\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Sources\Core\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Sources\Core\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Apple.cpp">
+      <Filter>Sources\Core\GameObjects\InteractableObjects\Apple</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources.cpp">
+      <Filter>Sources\Configure</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Sources\Core\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Leaderboard.cpp">
+      <Filter>Sources\Core\Leaderboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Sources\Utils\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuUI.cpp">
+      <Filter>Sources\UI\MainMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenu.cpp">
+      <Filter>Sources\UI\BaseMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="EndGameMenuUI.cpp">
+      <Filter>Sources\UI\EndGameMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="LeaderboardMenuUI.cpp">
+      <Filter>Sources\UI\LeaderboardMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverMenuUI.cpp">
+      <Filter>Sources\UI\GameOverMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsMenuUI.cpp">
+      <Filter>Sources\UI\SettingsMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings.cpp">
+      <Filter>Sources\Configure</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UI.h">
+      <Filter>Sources\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIButtons.h">
+      <Filter>Sources\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Sources\Core\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Constantes.h">
+      <Filter>Sources\Configure</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.h">
+      <Filter>Sources\Configure</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Sources\Configure</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Sources\Core\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Apple.h">
+      <Filter>Sources\Core\GameObjects\InteractableObjects\Apple</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Sources\Core\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Leaderboard.h">
+      <Filter>Sources\Core\Leaderboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Sources\Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuUI.h">
+      <Filter>Sources\UI\MainMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMenu.h">
+      <Filter>Sources\UI\BaseMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="EndGameMenuUI.h">
+      <Filter>Sources\UI\EndGameMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="LeaderboardMenuUI.h">
+      <Filter>Sources\UI\LeaderboardMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverMenuUI.h">
+      <Filter>Sources\UI\GameOverMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsMenuUI.h">
+      <Filter>Sources\UI\SettingsMenu</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
