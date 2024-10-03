@@ -94,9 +94,6 @@
     <ClCompile Include="MainMenuUI.cpp">
       <Filter>Sources\UI\MainMenu</Filter>
     </ClCompile>
-    <ClCompile Include="GameMenu.cpp">
-      <Filter>Sources\UI\BaseMenu</Filter>
-    </ClCompile>
     <ClCompile Include="EndGameMenuUI.cpp">
       <Filter>Sources\UI\EndGameMenu</Filter>
     </ClCompile>

@@ -162,7 +162,6 @@
     <ClCompile Include="EndGameMenuUI.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMain.cpp" />
-    <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="GameMode.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameOverMenuUI.cpp" />

@@ -2,9 +2,9 @@
 
 namespace SnakeGame
 {
-	void UpdateApple(Apple& apple, sf::Texture& texture, sf::Sprite& sprite, float screenWidth, float screenHeigth, float size, float gridSize)
+	void UpdateApple(Apple& apple, sf::Texture& texture, sf::Sprite& sprite, Position2D newPosition, float size)
 	{
-		apple.position = GetRandomPosition2D(screenWidth, screenHeigth, gridSize);
+		apple.position = newPosition;
 		UpdateSprite(apple, texture, sprite, size);
 		sprite.setPosition(GetVector2fFrom2D(apple.position));
 	}

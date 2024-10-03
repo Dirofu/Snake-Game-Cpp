@@ -83,13 +83,13 @@ namespace SnakeGame
 		game.timeToNextStep = game.timeToStep;
 		game.player.canChangeDirection = true;
 
-		if (CheckCollisionWithWindowBoarder(game.player.body[0].position, PLAYER_SIZE, SCREEN_WIDTH, SCREEN_HEIGTH))
+		if (CheckCollisionWithWindowBoarder(game.player.body[0].position, SEGMENT_SIZE, SCREEN_WIDTH, SCREEN_HEIGTH))
 			EndGame(game);
 
 		for (Apple& apple : game.apples)
 		{
-			if (CalculateDistance(game.player.body[0].position, apple.position) < PLAYER_SIZE)
-				if (CheckCircleCollisionBetweenObjects(game.player.body[0].position, PLAYER_SIZE / 2, apple.position, APPLE_SIZE / 2))
+			if (CalculateDistance(game.player.body[0].position, apple.position) < SEGMENT_SIZE)
+				if (CheckCircleCollisionBetweenObjects(game.player.body[0].position, SEGMENT_SIZE / 2, apple.position, SEGMENT_SIZE / 2))
 					EatApple(game, apple);
 		}
 
@@ -97,21 +97,42 @@ namespace SnakeGame
 		{
 			SnakeSegment segment = game.player.body[i];
 
-			if (CalculateDistance(game.player.body[0].position, segment.position) < PLAYER_SIZE)
-				if (CheckRectangleCollisionBetweenObjects(game.player.body[0].position, PLAYER_SIZE / 2, segment.position, PLAYER_SIZE / 2))
+			if (CalculateDistance(game.player.body[0].position, segment.position) < SEGMENT_SIZE)
+				if (CheckRectangleCollisionBetweenObjects(game.player.body[0].position, segment.position, SEGMENT_SIZE / 2))
 					EndGame(game);
 		}
 	}
 
 	void EatApple(Game& game, Apple& apple)
 	{
+		bool isCorrectPosition = false;
+		Position2D position = Position2D(-1.f, -1.f);
 		game.countEatenApples++;
 	
 		if (game.settings.activeSound)
 			PlaySound(game.sound.eatSound);
-		
+
 		AddNewSegment(game.player);
-		UpdateApple(apple, game.resources.appleTexture, apple.sprite, SCREEN_WIDTH, SCREEN_HEIGTH, APPLE_SIZE, PLAYER_SIZE);
+
+		while (!isCorrectPosition)
+		{
+			int segmentCounter = 1;
+			position = GetRandomPosition2D(SCREEN_WIDTH, SCREEN_HEIGTH, SEGMENT_SIZE);
+			
+			for (int i = 1; i < game.player.body.size(); i++)
+			{
+				SnakeSegment segment = game.player.body[i];
+
+				if (position != segment.position)
+					segmentCounter++;
+
+			}
+			
+			if (segmentCounter == game.player.body.size())
+				isCorrectPosition = true;
+		}
+
+		UpdateApple(apple, game.resources.appleTexture, apple.sprite, position, SEGMENT_SIZE);
 	}
 
 	template <class T>
@@ -287,7 +308,16 @@ namespace SnakeGame
 		game.currentGameState = GameState::Game;
 		game.countEatenApples = 0;
 
-		ResetPlayer(game.player, game.resources.headTexture, game.resources.bodyTexture, INITIAL_SPEED, Vector2D{ SCREEN_WIDTH / 2, SCREEN_HEIGTH / 2 }, sf::Vector2f{ PLAYER_SIZE, PLAYER_SIZE });
+		float positionX = SCREEN_WIDTH / 2 - SEGMENT_SIZE / 2;
+		float positionY = SCREEN_HEIGTH / 2 - SEGMENT_SIZE / 2;
+
+		ResetPlayer(game.player, 
+			game.resources.headTexture, 
+			game.resources.bodyTexture, 
+			INITIAL_SPEED, 
+			Vector2D{ positionX, positionY },
+			sf::Vector2f{ SEGMENT_SIZE, SEGMENT_SIZE });
+		
 		PlaceApplesOnScreen(game);
 
 		if (game.settings.activeMusic)
@@ -340,10 +370,13 @@ namespace SnakeGame
 
 	void PlaceApplesOnScreen(Game& game)
 	{
-		game.applesOnScreen = rand() % (APPLES_COUNT - 1);
+		Position2D position;
 
-		for (int i = 0; i < game.applesOnScreen; i++)
-			UpdateApple(game.apples[i], game.resources.appleTexture, game.apples[i].sprite, SCREEN_WIDTH, SCREEN_HEIGTH, APPLE_SIZE, PLAYER_SIZE);
+		for (int i = 0; i < APPLES_COUNT; i++)
+		{
+			position = GetRandomPosition2D(SCREEN_WIDTH, SCREEN_HEIGTH, SEGMENT_SIZE);
+			UpdateApple(game.apples[i], game.resources.appleTexture, game.apples[i].sprite, position, SEGMENT_SIZE);
+		}
 	}
 
 	void CloseGame(Game& game)

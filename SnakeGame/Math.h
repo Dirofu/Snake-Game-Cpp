@@ -13,6 +13,16 @@ namespace SnakeGame
 
 		float x = 0;
 		float y = 0;
+
+		bool operator==(const Vector2D& other) const 
+		{
+			return (this->x == other.x && this->y == other.y);
+		}
+
+		bool operator!=(const Vector2D& other) const
+		{
+			return (this->x != other.x || this->y != other.y);
+		}
 	};
 
 	typedef Vector2D Position2D;
@@ -21,7 +31,7 @@ namespace SnakeGame
 
 	float CalculateDistance(Position2D obj1Position, Position2D obj2Position);
 
-	bool CheckRectangleCollisionBetweenObjects(Position2D objPosition1, float sizeObj1, Position2D objPosition2, float sizeObj2);
+	bool CheckRectangleCollisionBetweenObjects(Position2D objPosition1, Position2D objPosition2, float sectorSize);
 
 	bool CheckCircleCollisionBetweenObjects(Position2D objPosition1, float objRadius1, Position2D objPosition2, float objRadius2);
 

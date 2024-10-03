@@ -8,7 +8,7 @@ namespace SnakeGame
 
 	};
 
-	void UpdateApple(Apple& apple, sf::Texture& texture, sf::Sprite& sprite, float screenWidth, float screenHeigth, float size, float gridSize);
+	void UpdateApple(Apple& apple, sf::Texture& texture, sf::Sprite& sprite, Position2D newPosition, float size);
 
 	void DrawApple(Apple& apple, sf::RenderWindow& window);
 }

@@ -14,13 +14,13 @@ namespace SnakeGame
 		return (float)sqrt(pow(obj2Position.x - obj1Position.x, 2) + pow(obj2Position.y - obj1Position.y, 2));
 	}
 
-	bool CheckRectangleCollisionBetweenObjects(Position2D objPosition1, float sizeObj1, Position2D objPosition2, float sizeObj2)
+	bool CheckRectangleCollisionBetweenObjects(Position2D objPosition1, Position2D objPosition2, float sectorSize)
 	{
 		float deltaX = (float)fabs(objPosition1.x - objPosition2.x);
 		float deltaY = (float)fabs(objPosition1.y - objPosition2.y);
 
-		return (deltaX <= (sizeObj1 + sizeObj2) / 2.f &&
-			deltaY <= (sizeObj1 + sizeObj2) / 2.f);
+		return (deltaX <= (sectorSize + sectorSize) / 2.f &&
+			deltaY <= (sectorSize + sectorSize) / 2.f);
 	}
 
 	bool CheckCircleCollisionBetweenObjects(Position2D objPosition1, float objRadius1, Position2D objPosition2, float objRadius2)
@@ -50,8 +50,8 @@ namespace SnakeGame
 	{
 		Position2D position;
 
-		position.x = gridSize + rand() / (float)RAND_MAX * (screenWidth - gridSize);
-		position.y = gridSize + rand() / (float)RAND_MAX * (screenHeigth - gridSize);
+		position.x = gridSize / 2 + (rand() % (int)((screenWidth - gridSize) / gridSize + 1)) * gridSize;
+		position.y = gridSize / 2 + (rand() % (int)((screenHeigth - gridSize) / gridSize + 1)) * gridSize;
 
 		return position;
 	}

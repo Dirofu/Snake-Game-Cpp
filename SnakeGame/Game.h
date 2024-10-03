@@ -28,7 +28,6 @@ namespace SnakeGame
 		bool gameRun = true;
 
 		int countEatenApples = 0;
-		int applesOnScreen = 0;
 		float timeToStep = 1.f;
 		float timeToNextStep = 0.f;
 	};

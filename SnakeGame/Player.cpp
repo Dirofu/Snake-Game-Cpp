@@ -31,16 +31,16 @@ namespace SnakeGame
 		switch (player.body[0].direction)
 		{
 			case Direction::Right:
-				player.body[0].position.x += PLAYER_SIZE;
+				player.body[0].position.x += SEGMENT_SIZE;
 				break;
 			case Direction::Up:
-				player.body[0].position.y -= PLAYER_SIZE;
+				player.body[0].position.y -= SEGMENT_SIZE;
 				break;
 			case Direction::Left:
-				player.body[0].position.x -= PLAYER_SIZE;
+				player.body[0].position.x -= SEGMENT_SIZE;
 				break;
 			case Direction::Down:
-				player.body[0].position.y += PLAYER_SIZE;
+				player.body[0].position.y += SEGMENT_SIZE;
 				break;
 		}
 	}
@@ -57,7 +57,7 @@ namespace SnakeGame
 		player.body.push_back(headSegment);
 
 		SnakeSegment bodySegment = {};
-		bodySegment.position = { startPosition.x - PLAYER_SIZE, startPosition.y };
+		bodySegment.position = { startPosition.x - SEGMENT_SIZE, startPosition.y };
 		player.body.push_back(bodySegment);
 
 		player.speed = speed;
@@ -65,8 +65,8 @@ namespace SnakeGame
 		player.isAlive = true;
 		player.length = 2;
 
-		UpdateSprite(player.body[0], headTexture, player.body[0].sprite, PLAYER_SIZE);
-		UpdateSprite(player.body[1], bodyTexture, player.body[1].sprite, PLAYER_SIZE);
+		UpdateSprite(player.body[0], headTexture, player.body[0].sprite, SEGMENT_SIZE);
+		UpdateSprite(player.body[1], bodyTexture, player.body[1].sprite, SEGMENT_SIZE);
 	}
 
 	void SetPlayerDeadStatus(Player& player)
